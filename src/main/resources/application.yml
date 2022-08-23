@@ -1,0 +1,64 @@
+
+server:
+  port: 8088
+  undertow:
+    buffer-size: 1024
+    direct-buffers: true
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+
+spring:
+  cache:
+    ehcache:
+      config: classpath:config/ehcache.xml
+  servlet:
+    multipart:
+      max-file-size: 256MB
+      max-request-size: 1024MB
+  mvc:
+    throw-exception-if-no-handler-found: true
+    #jdbc
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///kbi?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8
+    username: root
+    password: root
+
+
+# mybatis
+#mybatis-plush
+
+mybatis-plus:
+  type-aliases-package: com.julei.kbi
+  mapper-locations: classpath:/mybatis/mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+  global-config:
+    db-config:
+      #�ֶβ���
+      insert-strategy: not_null
+      update-strategy: not_null
+      select-strategy: not_null
+      #�շ��»���ת��
+      table-underline: true
+logging:
+  level:
+    com.jd.mapper: debug
+
+swagger:
+  title: SpringBlade
+  description: SpringBlade
+  version: 2.7.0
+  license: Powered By SpringBlade
+  licenseUrl: https://bladex.vip
+  terms-of-service-url: https://bladex.vip
+  contact:
+    name: smallchill
+    email: smallchill@163.com
+    url: https://gitee.com/smallc
+ymlConfig:
+  theDefaultPassword: 123456
+
