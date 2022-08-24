@@ -22,7 +22,7 @@ spring:
     #jdbc
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql:///kbi?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://yjgzz.db:3306/kbi?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8
     username: root
     password: root
 
@@ -38,27 +38,32 @@ mybatis-plus:
 
   global-config:
     db-config:
-      #�ֶβ���
+
       insert-strategy: not_null
       update-strategy: not_null
       select-strategy: not_null
-      #�շ��»���ת��
+      #驼峰下划线转换
       table-underline: true
+      # 逻辑删除配置
+      # 逻辑删除全局值（1表示已删除，这也是Mybatis Plus的默认配置）
+      logic-delete-value: 1
+      # 逻辑未删除全局值（0表示未删除，这也是Mybatis Plus的默认配置）
+      logic-not-delete-value: 0
 logging:
   level:
     com.jd.mapper: debug
-
-swagger:
-  title: SpringBlade
-  description: SpringBlade
-  version: 2.7.0
-  license: Powered By SpringBlade
-  licenseUrl: https://bladex.vip
-  terms-of-service-url: https://bladex.vip
-  contact:
-    name: smallchill
-    email: smallchill@163.com
-    url: https://gitee.com/smallc
+#
+#swagger:
+#  title: SpringBlade
+#  description: SpringBlade
+#  version: 2.7.0
+#  license: Powered By SpringBlade
+#  licenseUrl: https://bladex.vip
+#  terms-of-service-url: https://bladex.vip
+#  contact:
+#    name: smallchill
+#    email: smallchill@163.com
+#    url: https://gitee.com/smallc
 ymlConfig:
   theDefaultPassword: 123456
 

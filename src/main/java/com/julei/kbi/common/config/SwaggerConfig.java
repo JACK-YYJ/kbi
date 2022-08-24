@@ -17,6 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+//    private SwaggerProperties swaggerProperties;
     /**
      * 创建API应用
      * apiInfo() 增加API相关信息
@@ -52,6 +53,16 @@ public class SwaggerConfig {
                 .contact(new Contact("xqnode", "https://blog.csdn.net/xqnode", "xiaqingweb@163.com"))
                 .version(version)
                 .build();
+//    }	private ApiInfo apiInfo() {
+//        return new ApiInfoBuilder()
+//                .title(SwaggerConfig.getTitle())
+//                .description(swaggerProperties.getDescription())
+//                .license(swaggerProperties.getLicense())
+//                .licenseUrl(swaggerProperties.getLicenseUrl())
+//                .termsOfServiceUrl(swaggerProperties.getTermsOfServiceUrl())
+//                .contact(new Contact(swaggerProperties.getContact().getName(), swaggerProperties.getContact().getUrl(), swaggerProperties.getContact().getEmail()))
+//                .version(swaggerProperties.getVersion())
+//                .build();
     }
 }
 
